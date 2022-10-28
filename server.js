@@ -40,7 +40,7 @@ app.post('/api/notes', (req, res) => {
         : console.info('successfully updated notes!')   
     });
 
-    db = newNote;
+    db = detNotes;
     res.json(req.body)
     res.sendFile(path.join(__dirname, + '/public' + 'api/notes.html'))
     }
