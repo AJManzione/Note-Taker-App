@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 
 const db = require('./db/db.json');
+const { randomUUID } = require('crypto');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,33 +29,16 @@ app.get('*', (req, res) => {
 });
 
 
-function newNote(body, noteArr) {
-    const newNote = body;
-    const noteArr = [];
-
-    body.id = noteArr[0];
-    noteArr++;
-    noteArr.push(newNote);
-
+app.post("/api/notes", (req, res) => {
+    req.body.id = randomUUID();
+    const note = req.body;
+    console.log(db);
+    db.push(note);
     fs.writeFileSync(
-        path.join(__dirname, './db/db.json'),
-        JSON.stringify(notesArray, null, 2)
-    ); return newNote;
-}
-
-app.post('/api/notes', (req, res) => {
-    const newNote = newNote(req.body, allNotes);
-    res.json(newNote);
-});
-
-function deleteNote(id, noteArr) {
-    for(i = 0; i < noteArr.length; i++) {
-        let note = noteArr[i];
-
-        if(note.id == id) {
-            
-        }
-    }
-}
+      path.join(__dirname, "/db/db.json"),
+      JSON.stringify(db)
+    );
+    res.json(note);
+  });
 
 app.listen(PORT, () =>  console.info(`Example app listening at http://localhost:${PORT} 🚀`));
