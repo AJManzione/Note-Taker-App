@@ -4,6 +4,7 @@
 
 ## The note taker app allows you to write, save and delete notes all on one page!
 
+[Deployed Link](https://note-taker-dev-anthony.herokuapp.com/)
 ## Table of Contents
 1. [General Info](#general)
 2. [Technologies](#technologies)
@@ -15,10 +16,10 @@
 *HTML,CSS,JavaScript,Node.js,Git,GitHub*
 
 # Installaton
-*- Clone the repository - run "npm i" to install required dependencies - run server.js to load a local server - or  use the app  by clicking the deployed link above*
-
-# Usage
-*This project can be used by all who wish to use it*
+- use the app by clicking the deployed link above or
+- Clone the repository 
+- run "npm i" to install required dependencies 
+- run server.js to load a local server 
 
 # License
 *MIT License*
