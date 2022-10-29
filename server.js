@@ -28,5 +28,33 @@ app.get('*', (req, res) => {
 });
 
 
+function newNote(body, noteArr) {
+    const newNote = body;
+    const noteArr = [];
+
+    body.id = noteArr[0];
+    noteArr++;
+    noteArr.push(newNote);
+
+    fs.writeFileSync(
+        path.join(__dirname, './db/db.json'),
+        JSON.stringify(notesArray, null, 2)
+    ); return newNote;
+}
+
+app.post('/api/notes', (req, res) => {
+    const newNote = newNote(req.body, allNotes);
+    res.json(newNote);
+});
+
+function deleteNote(id, noteArr) {
+    for(i = 0; i < noteArr.length; i++) {
+        let note = noteArr[i];
+
+        if(note.id == id) {
+            
+        }
+    }
+}
 
 app.listen(PORT, () =>  console.info(`Example app listening at http://localhost:${PORT} 🚀`));
