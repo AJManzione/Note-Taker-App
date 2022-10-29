@@ -5,6 +5,9 @@
 ## The note taker app allows you to write, save and delete notes all on one page!
 
 [Deployed Link](https://note-taker-dev-anthony.herokuapp.com/)
+
+![alt](/assets/Note%20Taker.gif)
+
 ## Table of Contents
 1. [General Info](#general)
 2. [Technologies](#technologies)
