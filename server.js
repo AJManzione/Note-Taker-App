@@ -40,5 +40,20 @@ app.post("/api/notes", (req, res) => {
     );
     res.json(note);
   });
+  
+
+  app.delete("/api/notes/:id", function (req, res) {
+    const id = req.params.id;
+    for (i = 0; i < db.length; i++) {
+      if (db[i].id === id) {
+        db.splice(i, 1);
+      }
+    }
+    fs.writeFileSync(
+      path.join(__dirname, "/db/db.json"),
+      JSON.stringify(db)
+    );
+    res.send(db);
+  });
 
 app.listen(PORT, () =>  console.info(`Example app listening at http://localhost:${PORT} 🚀`));
